@@ -13,7 +13,23 @@
     <title>Covid Tracker</title>
   </head>
   <body>
+
     <div class="container">
+        <select id="countryselect">
+            <option value="India">INDIA</option>
+            <option value="Nepal">NEPAL</option>
+            <option value="USA">AMERICA</option>
+            <option value="Afghanistan">AFGHANISTAN</option>
+            <option value="Albania">ALBANIA</option>
+            <option value="Algeria">ALGERIA</option>
+            <option value="Pakistan">PAKISTAN</option>
+            <option value="Bhutan">BHUTAN</option>
+            <option value="Sri Lanka">SRILANKA</option>
+            <option value="China">CHINA</option>
+            <option value="UK">UK</option>
+            <option value="France">FRANCE</option>
+        </select>
+        <button id="buttonselect" onclick="status()">Status</button>
         <div class="header">
             <h2>The covid Track in the <span id="countryname"></span><img id="flag" src=""/></h2>
         </div>
@@ -76,6 +92,28 @@
        };
         xhttp.open("GET", "https://corona.lmao.ninja/v2/countries/India", true);
         xhttp.send();
+
+      function status() {
+         var s=document.getElementById('countryselect').value;
+         var url="https://corona.lmao.ninja/v2/countries/"+s;
+         var xxhttp = new XMLHttpRequest();
+         xxhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            var x=this.responseText;
+            var my=JSON.parse(x);
+            document.getElementById('countryname').innerText=my['country'];
+            document.getElementById('flag').src=my['countryInfo']['flag'];
+            document.getElementById('contenttc').innerText=my['cases'];
+            document.getElementById('contentac').innerText=my['active'];
+            document.getElementById('contenttd').innerText=my['deaths'];
+            document.getElementById('contentcc').innerText=my['critical'];
+            document.getElementById('contenttr').innerText=my['recovered'];
+            document.getElementById('contenttt').innerText=my['tests'];
+            }
+        };
+        xxhttp.open("GET",url, true);
+        xxhttp.send();
+     }
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
