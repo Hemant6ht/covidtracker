@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+body{
+    font-family:'Ceviche One', cursive;
+    
+    justify-content: center;
+    vertical-align: center;
+    position: relative;
+}
+body::before{
+    content: "";
+    background-color:teal;
+    height: 50vh;
+    width:100vw;
+    display: block;
+}
+.container{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateY(50%);
+    transform: translateX(-50%);
+    display:flex;
+    flex-direction:column;
+}
+.cards{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    padding: 1rem 1rem;
+    
+}
+.card1{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color: #b30000;
+    border-radius:1vh;
+    padding: 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.card2{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color:#004d39;
+    border-radius:1vh;
+    padding: 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.card3{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color: #00264d;
+    border-radius:1vh;
+    padding: 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.card4{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color: #cc5200;
+    border-radius:1vh;
+    padding: 1rem 1rem 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.card5{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color: #808000;
+    border-radius:1vh;
+    padding: 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.card6{
+    height: 20vh;
+    margin: 1vh 1vh;
+    background-color: #19334d;
+    border-radius:1vh;
+    padding: 1rem 1rem;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.icon{
+   color: white;
+}
+
+@media screen and (max-width:992px) {
+    .cards{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        padding: 1rem 1rem;
+        
+    }
+}
+@media screen and (max-width:768px) {
+    .cards{
+        display: grid;
+        grid-template-columns:1fr;
+        padding: 1rem 1rem;
+        
+    }
+}
+.header h2{
+    font-size: 50px;
+    color:white;
+}
+.cards div:hover{
+    transform: scale(1.1);
+}
+.cards div{
+    padding-bottom: 1rem;
+}
+#flag{
+    width:40px;
+    height:28px;
+    margin-left: 1rem;
+}
